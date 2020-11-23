@@ -1,0 +1,54 @@
+[
+      {
+        "Tanggal_Pengiriman": "11/23/2020",
+        "Duras_Pengiriman": "5 Hari",
+        "Nama_Barang": "Ban Mobil",
+        "No_Resi": "08239164583881111",
+        "Nama_Pengirim": "Syfa",
+        "Lokasi_Barang": "Gudang A",
+        "Status": "Transit",
+        "Tujuan_Pengiriman": "Gudang B"
+      },
+      {
+        "Tanggal_Pengiriman": "11/22/2020",
+        "Duras_Pengiriman": "5 Hari",
+        "Nama_Barang":"Vlag Mobil",
+        "No_Resi": "082391645838i827482",
+        "Nama_Pengirim": "Sherly",
+        "Lokasi_Barang": "Gudang B",
+        "Status": "Transit",
+        "Tujuan_Pengiriman": "Gudang C"
+      },
+      {
+        "Tanggal_Pengiriman": "11/21/2020",
+        "Duras_Pengiriman": "7 Hari",
+        "Nama_Barang":"Jok Mobil",
+        "No_Resi": "082391645838i237198",
+        "Nama_Pengirim": "Nurul",
+        "Lokasi_Barang": "Gudang B",
+        "Status": "Perjalanan",
+        "Tujuan_Pengiriman": "Gudang C"
+      },
+      {
+        "Tanggal_Pengiriman": "11/20/2020",
+        "Duras_Pengiriman": "10 Hari",
+        "Nama_Barang":"Oli",
+        "No_Resi": "082391645838i827482",
+        "Nama_Pengirim": "Neila",
+        "Lokasi_Barang": "Gudang A",
+        "Status": "Perjalanan",
+        "Tujuan_Pengiriman": "Gudang C"
+      },
+      {
+        "Tanggal_Pengiriman": "11/19/2020",
+        "Duras_Pengiriman": "9 Hari",
+        "Nama_Barang":"Kopling",
+        "No_Resi": "082391645838947527",
+        "Nama_Pengirim": "Lulu",
+        "Lokasi_Barang": "Gudang B",
+        "Status": "Transit",
+        "Tujuan_Pengiriman": "Gudang C"
+      }
+      
+    ]
+  
