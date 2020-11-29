@@ -98,40 +98,40 @@
                 ?>
   <form>
     <div class="form-group">
-      <label for="exampleInputEmail1">Lokasi Gudang</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <label for="exampleInputLokasi">Lokasi Gudang</label>
+      <input type="Lokasi" class="form-control" id="exampleInputLokasi" aria-describedby="emailHelp">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Nama Barang</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputNama">Nama Barang</label>
+      <input type="Nama" class="form-control" id="exampleInputNama">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Jenis Barang</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputJenis">Jenis Barang</label>
+      <input type="Jenis" class="form-control" id="exampleInputJenis">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Kode Barang</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputKode">Kode Barang</label>
+      <input type="Kode" class="form-control" id="exampleInputKode">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Jumlah Barang</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputJumlah">Jumlah Barang</label>
+      <input type="Jumlah" class="form-control" id="exampleInputJumlah">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">No Resi</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputNoResi">No Resi</label>
+      <input type="NoResi" class="form-control" id="exampleInputNoResi">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Tanggal Pengiriman</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputTanggal">Tanggal Pengiriman</label>
+      <input type="Tanggal" class="form-control" id="exampleInputTanggal">
     </div>  
     <div class="form-group">
-      <label for="exampleInputPassword1">Durasi Pengiriman</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputDurasi">Durasi Pengiriman</label>
+      <input type="Durasi" class="form-control" id="exampleInputDurasi">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Nama Pengirim</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputPengirim">Nama Pengirim</label>
+      <input type="Pengirim" class="form-control" id="exampleInputPengirim">
     </div>
       <center>
       <button type="submit" class="btn btn-primary">Submit</button>

@@ -104,30 +104,29 @@
                 ?>
   <form>
     <div class="form-group">
-      <label for="exampleInputEmail1">Tanggal</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <label for="exampleInputNama">Nama Transaksi</label>
+      <input type="Nama" class="form-control" id="exampleInputNama" aria-describedby="emailHelp">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Jenis Pengeluaran</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputJenis">Jenis Transaksi</label>
+      <input type="Jenis" class="form-control" id="exampleInputJenis">
     </div>
+   <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Divisi</button>
+    <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">SDM01</a>
+    <a class="dropdown-item" href="#">PRC02</a>
+    <a class="dropdown-item" href="#">WRH03</a>
+    <a class="dropdown-item" href="#">LOG04</a>
+    </div>
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+</div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Kuantitas</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="exampleInputBiaya">Biaya</label>
+      <input type="Biaya" class="form-control" id="exampleInputBiaya">
     </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Satuan</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Harga Satuan</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-      <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <center>
       <button type="submit" class="btn btn-primary">Submit</button>
       </center>
   </form>
