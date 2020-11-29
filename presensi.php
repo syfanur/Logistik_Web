@@ -64,15 +64,11 @@
           <div class="dropdown">
           <a class="dropdown-toggle nav-link" type="button" data-toggle="dropdown"> Menu</a>
           <ul class="dropdown-menu">
-            <li><a class="nav-link js-scroll-trigger" href="#services">Tracking Barang</a></li>
             <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
             <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
             <li><a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Penerimaan</a></li>
           </ul>
         </div>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link js-scroll-trigger" href="index.php">About</a>
 			  </li>
 			</ul>
 		  </div>
