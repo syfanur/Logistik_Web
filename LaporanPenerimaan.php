@@ -59,7 +59,7 @@
         <a class="nav-link js-scroll-trigger" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a>
+        <a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Laporan Penerimaan</a>
         </li> 
         <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="index.php">About</a>
@@ -76,7 +76,7 @@
         <div class="container">
     <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2">Operasional Logistik</h2>
+            <h2 class="mb-md-2">Laporan Penerimaan</h2>
           </div>
     </div> 
  
@@ -84,7 +84,7 @@
 
           <div class="panel panel-default">
               <div class="panel-heading">
-               <b>Form Data Operasional</b> 
+               <b>Data Laporan Penerimaan</b> 
                 
               </div> 
               <br>
@@ -96,40 +96,44 @@
                 $data = json_decode($url, true);
 
                 ?>
-  <form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Tanggal</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Jenis Pengeluaran</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Kuantitas</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Satuan</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Harga Satuan</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-      <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+   <table class="table table-striped table-bordered table-hover">
+                          <thead>
+                              <tr>
+                                  <th>No</th>
+                                  <th>Nama Barang</th>
+                                  <th>Kode Barang</th>
+                                  <th>Jenis Barang</th>
+                                  <th>Penerima</th>
+                                  <th>Tanggal Terima</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          
+
+                    <tr>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                    </tr>
+
+                   
+
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+
       </div>
-      <center>
-      <button type="submit" class="btn btn-primary">Submit</button>
-      </center>
-  </form>
-
-
-   
   </div>
-      </section>
+  <!-- /. ROW  -->
+  
+        </div>
+      </section> 
 
   
     <!-- Footer -->
@@ -178,14 +182,14 @@
 
     <!-- Components Vendor  --> 
     <script src="assets/vendors/slick-carousel/slick.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
     <script src="assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="assets/vendors/counters/waypoint.min.js"></script>
     <script src="assets/vendors/counters/counterup.min.js"></script>
 
-	<script src="assets/contact/jqBootstrapValidation.js"></script>
-	<script src="assets/contact/contact_me.js"></script>
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/contact/jqBootstrapValidation.js"></script>
+  <script src="assets/contact/contact_me.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/scrolling-nav.js"></script>
     <!--Plugin Initialize-->
     <script src="assets/js/global.js"></script>
@@ -201,7 +205,7 @@
 }
 </script>
 
-	
+  
   </body>
   <!-- End Body -->
 </html>

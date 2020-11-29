@@ -59,7 +59,7 @@
         <a class="nav-link js-scroll-trigger" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a>
+        <a class="nav-link js-scroll-trigger" href="pengiriman.php">Pengiriman</a>
         </li> 
         <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="index.php">About</a>
@@ -76,7 +76,7 @@
         <div class="container">
     <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2">Operasional Logistik</h2>
+            <h2 class="mb-md-2">Data Pengiriman</h2>
           </div>
     </div> 
  
@@ -84,7 +84,7 @@
 
           <div class="panel panel-default">
               <div class="panel-heading">
-               <b>Form Data Operasional</b> 
+               <b>Form Data Pengiriman</b> 
                 
               </div> 
               <br>
@@ -98,29 +98,41 @@
                 ?>
   <form>
     <div class="form-group">
-      <label for="exampleInputEmail1">Tanggal</label>
+      <label for="exampleInputEmail1">Lokasi Gudang</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Jenis Pengeluaran</label>
+      <label for="exampleInputPassword1">Nama Barang</label>
       <input type="password" class="form-control" id="exampleInputPassword1">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Kuantitas</label>
+      <label for="exampleInputPassword1">Jenis Barang</label>
       <input type="password" class="form-control" id="exampleInputPassword1">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Satuan</label>
+      <label for="exampleInputPassword1">Kode Barang</label>
       <input type="password" class="form-control" id="exampleInputPassword1">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Harga Satuan</label>
+      <label for="exampleInputPassword1">Jumlah Barang</label>
       <input type="password" class="form-control" id="exampleInputPassword1">
     </div>
-      <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">No Resi</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Tanggal Pengiriman</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>  
+    <div class="form-group">
+      <label for="exampleInputPassword1">Durasi Pengiriman</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Nama Pengirim</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
       <center>
       <button type="submit" class="btn btn-primary">Submit</button>
       </center>
