@@ -1,6 +1,21 @@
 <?php
 require 'function.php';
-$barang = read("SELECT * FROM penerimaan");
+if(isset($_POST["submit"])){
+if(create($_POST) > 0){
+    echo "
+    <div class='alert alert-success'>
+    <strong>Success!</strong> Data successfully has been created.
+    </div>
+    ";
+}else{
+    echo "
+    <div class='alert alert-danger'>
+    <strong>Success!</strong> Data failed to created.
+    </div>
+    ";
+}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -80,14 +95,14 @@ $barang = read("SELECT * FROM penerimaan");
 		</div>
 	  </nav>
       <!-- End Navbar --> 
-
+   
    <main role="main" class="mt-lg-5 m-0">
   
   <section class="wt-section" id="services">
         <div class="container">
     <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2">Laporan Penerimaan</h2>
+            <h2 class="mb-md-2">Penerimaan Barang</h2>
           </div>
     </div> 
  
@@ -95,12 +110,13 @@ $barang = read("SELECT * FROM penerimaan");
 
           <div class="panel panel-default">
               <div class="panel-heading">
-               <b>Data Laporan Penerimaan</b> 
+               <b>Form Data Barang</b> 
                 
               </div> 
               <br>
               <div class="panel-body">
                   <div class="table-responsive">
+                 
                    <?php
 
                 $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
@@ -108,57 +124,59 @@ $barang = read("SELECT * FROM penerimaan");
 
                 ?>
 
-   <table class="table table-striped table-bordered table-hover">
+<table class="table table-striped table-bordered table-hover">
                           <thead>
                               <tr>
-                                  <th>No</th>
                                   <th>Nama Barang</th>
                                   <th>Jumlah Barang</th>
                                   <th>Biaya Barang</th>
                                   <th>Tanggal Order</th>
                                   <th>Nama Vendor</th>
-                                  <th>Penerima</th>
-                                  <th>Tanggal Terima</th>
+                                  <th>Action</th>
                               </tr>
                           </thead>
                           <tbody>
-                          
-                          <?php
-                            $no = 0;
-            foreach($barang as $data):
-              
-        ?>
-        <?php $no++ ;?>
+                          <?php 
+
+                    foreach ($data as $dataa):
+                    ?>
+
                     <tr>
-                     <td><?=$no?></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td><?= $data["penerima"]; ?></td>
-                     <td><?= $data["tanggal_terima"]; ?></td>
+                     <td><?=$dataa['Tanggal_Pengiriman']?></td>
+                     <td><?=$dataa['Duras_Pengiriman']?></td>
+                     <td><?=$dataa['Nama_Barang']?></td>
+                     <td><?=$dataa['No_Resi']?></td>
+                     <td><?=$dataa['Nama_Pengirim']?></td>
+                     <td> </td>
+                    
                     </tr>
-            
-                   
+
+                    <?php 
+                    endforeach 
+                    ?>
 
                           </tbody>
-                          <?php
-                        endforeach;
-        ?>
                       </table>
-                      
-        
-                  </div>
-              </div>
-          </div>
-
-      </div>
-  </div>
-  <!-- /. ROW  -->
+    <form action="" method="post" enctype="multipart/form-data">
   
-        </div>
-      </section> 
+    <div class="form-group">
+      <label>Tanggal Terima</label>
+      <input type="date" class="form-control" name="tanggal_terima">
+    </div>
+    <div class="form-group">
+      <label>Penerima</label>
+      <input type="text" class="form-control" name="penerima">
+    </div>
+   
+    <button type="submit" class="btn btn-primary mr-3" name="submit">Submit</button>
+   
+      </center>
+  </form>
+
+
+   
+  </div>
+      </section>
 
   
     <!-- Footer -->
@@ -207,14 +225,14 @@ $barang = read("SELECT * FROM penerimaan");
 
     <!-- Components Vendor  --> 
     <script src="assets/vendors/slick-carousel/slick.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
     <script src="assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="assets/vendors/counters/waypoint.min.js"></script>
     <script src="assets/vendors/counters/counterup.min.js"></script>
 
-  <script src="assets/contact/jqBootstrapValidation.js"></script>
-  <script src="assets/contact/contact_me.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="assets/contact/jqBootstrapValidation.js"></script>
+	<script src="assets/contact/contact_me.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/scrolling-nav.js"></script>
     <!--Plugin Initialize-->
     <script src="assets/js/global.js"></script>
@@ -230,7 +248,8 @@ $barang = read("SELECT * FROM penerimaan");
 }
 </script>
 
-  
+
+
   </body>
   <!-- End Body -->
 </html>

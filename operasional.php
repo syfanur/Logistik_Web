@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <!-- Head -->
@@ -96,38 +98,33 @@
               <br>
               <div class="panel-body">
                   <div class="table-responsive">
-                   <?php
-
-                $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
-                $data = json_decode($url, true);
-
-                ?>
-  <form>
+               
+   <form action="testpost.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="exampleInputNama">Nama Transaksi</label>
-      <input type="Nama" class="form-control" id="exampleInputNama" aria-describedby="emailHelp">
+      <label for="exampleInputNama">Jenis Transaksi</label>
+      <input type="text" class="form-control" name="jenis_transaksi" aria-describedby="emailHelp">
     </div>
     <div class="form-group">
-      <label for="exampleInputJenis">Jenis Transaksi</label>
-      <input type="Jenis" class="form-control" id="exampleInputJenis">
+      <label for="exampleInputJenis">Divisi</label>
+      <input type="text" class="form-control" name="divisi" id="exampleInputJenis">
     </div>
-   <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Divisi</button>
-    <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">SDM01</a>
-    <a class="dropdown-item" href="#">PRC02</a>
-    <a class="dropdown-item" href="#">WRH03</a>
-    <a class="dropdown-item" href="#">LOG04</a>
+    <div class="form-group">
+      <label for="exampleInputJenis">Tanggal</label>
+      <input type="date" class="form-control" name="tanggal" id="exampleInputJenis">
     </div>
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with dropdown button">
-</div>
     <div class="form-group">
       <label for="exampleInputBiaya">Biaya</label>
-      <input type="Biaya" class="form-control" id="exampleInputBiaya">
+      <input type="text" class="form-control" name="biaya" id="exampleInputBiaya">
     </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+      <label for="exampleInputBiaya">Keterangan</label>
+      <input type="text" class="form-control" name="keterangan" id="exampleInputBiaya">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputBiaya">Token</label>
+      <input type="text" class="form-control" name="token" placeholder="Retype: user_api123" id="exampleInputBiaya">
+    </div>
+    <input type = "submit" name ="submit" value = "Submit" class="btn btn-primary">
       </center>
   </form>
 
