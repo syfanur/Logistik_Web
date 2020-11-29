@@ -58,138 +58,20 @@
 		  <div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 			<li class="nav-item">
-				<a class="nav-link js-scroll-trigger" href="#top">Home</a>
+				<a class="nav-link js-scroll-trigger" href="index.php">Home</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link js-scroll-trigger" href="#services">Tracking Barang</a>
+              <a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a>
               </li>
-              <li class="nav-item">
-				<a class="nav-link js-scroll-trigger" href="#absen">Presensi</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link js-scroll-trigger" href="#contact">About</a>
+				<a class="nav-link js-scroll-trigger" href="index.php">About</a>
 			  </li>
 			</ul>
 		  </div>
 		</div>
 	  </nav>
       <!-- End Navbar --> 
-		<section class="hero-large hero">
-			<div id="demo" class="carousel slide" data-ride="carousel">
-			  <ul class="carousel-indicators">
-				<li data-target="#demo" data-slide-to="0" class="active"></li>
-				<li data-target="#demo" data-slide-to="1"></li>
-			  </ul>
-			  <div class="carousel-inner">
-		
-				<div class="carousel-item active">
-				  <img src="assets/img/intro/background.jpg" alt="Chicago" width="1100" height="500">
-				    <div class="container">
-				  <div class="carousel-caption">
-					<h2>Aplikasi Logistik</h2>
-          <p style="font-size:18px">Aplikasi logistik ini berfungsi untuk memantau data pengiriman dan penerimaan barang dari divisi procurement</p>
-				  </div>   
-				</div>
-				</div>
-				<div class="carousel-item">
-				  <img src="assets/img/intro/background2.jpg" alt="New York" width="1100" height="500">
-				    <div class="container">
-				  <div class="carousel-caption">
-            <h2>Aplikasi Logistik</h2>
-            <p style="font-size:18px">Aplikasi ini juga dapat digunakan untuk tracking barang hingga sampai di gudang tujuan</p>
-				  </div>   
-				  </div>
-				</div>
-			  </div>
-			  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-				<span class="carousel-control-prev-icon"></span>
-			  </a>
-			  <a class="carousel-control-next" href="#demo" data-slide="next">
-				<span class="carousel-control-next-icon"></span>
-			  </a>
-			</div>
-			
-		</section>
-
-    </header>
-    <!-- End Header -->
-
-
-    <main role="main" class="mt-lg-5 m-0">
-	
-	<section class="wt-section" id="services">
-        <div class="container">
-		<div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
-          <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2">Tracking Barang</h2>
-          </div>
-		</div> 
-          
-
- 
-      <div class="col-md-12 col-sm-12 col-xs-12">
-
-          <div class="panel panel-default">
-              <div class="panel-heading">
-               <b>Data Tracking Barang</b> 
-                
-              </div> 
-              <br>
-              <div class="panel-body">
-                  <div class="table-responsive">
-                    <?php
-
-                $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
-                $data = json_decode($url, true);
-
-                ?>
-                      <table class="table table-striped table-bordered table-hover">
-                          <thead>
-                              <tr>
-                                  <th>Tanggal Pengiriman</th>
-                                  <th>Durasi Pengiriman</th>
-                                  <th>Nama Barang</th>
-                                  <th>No Resi</th>
-                                  <th>Pengirim</th>
-                                  <th>Lokasi Barang</th>
-                                  <th>Status</th>
-                                  <th>Tujuan</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                          <?php 
-
-                    foreach ($data as $dataa):
-                    ?>
-
-                    <tr>
-                     <td><?=$dataa['Tanggal_Pengiriman']?></td>
-                     <td><?=$dataa['Duras_Pengiriman']?></td>
-                     <td><?=$dataa['Nama_Barang']?></td>
-                     <td><?=$dataa['No_Resi']?></td>
-                     <td><?=$dataa['Nama_Pengirim']?></td>
-                     <td><?=$dataa['Lokasi_Barang']?></td>
-                     <td><?=$dataa['Status']?></td>
-                     <td><?=$dataa['Tujuan_Pengiriman']?></td>
-                    </tr>
-
-                    <?php 
-                    endforeach 
-                    ?>
-
-                          </tbody>
-                      </table>
-                  </div>
-              </div>
-          </div>
-
-      </div>
-  </div>
-  <!-- /. ROW  -->
-  
-        </div>
-      </section> 
-
 
       <section class="wt-section" id="absen">
         <div class="container">
@@ -251,22 +133,7 @@
         </div>
       </section>
 
-      
-
   
-
-<section class="wt-section bg-light" id="contact">
-    <div class="container">
-      <center><h2 class="mb-md-2">Address</h2></center>
-      <br><br>
-		 <div class="row" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2986422225986!2d107.62834001477327!3d-6.974049293874376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6285c5b7da517%3A0x864485f26a388f95!2sTelkom%20University!5e0!3m2!1sen!2sid!4v1604131088146!5m2!1sen!2sid" width="1300" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div>
-    </div>
-</section> 
-      <!-- End Clients Section -->
-    </main>
-
     <!-- Footer -->
     <footer class="bg-dark py-5">
       <div class="container">

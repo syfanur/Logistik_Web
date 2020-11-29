@@ -30,6 +30,17 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/theme.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
+    <style type="text/css">
+ .box {
+  width:  350px;
+  height: 100px;
+  background-color: #F4A460;
+  text-align: center;
+  line-height: 30px;
+  margin: 5px;
+ }
+ 
+ .clear {clear: both;}
 </style>
   </head>
   <!-- End Head -->
@@ -50,9 +61,15 @@
 				<a class="nav-link js-scroll-trigger" href="#top">Home</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link js-scroll-trigger" href="#services">Tracking Barang</a>
+          <div class="dropdown">
+          <a class="dropdown-toggle nav-link" type="button" data-toggle="dropdown"> Menu</a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link js-scroll-trigger" href="#services">Tracking Barang</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
+          </ul>
+        </div>
 			  </li>
-			   
 			  <li class="nav-item">
 				<a class="nav-link js-scroll-trigger" href="#contact">About</a>
 			  </li>
