@@ -67,6 +67,7 @@
             <li><a class="nav-link js-scroll-trigger" href="#services">Tracking Barang</a></li>
             <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
             <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Penerimaan</a></li>
           </ul>
         </div>
 			  </li>
@@ -78,6 +79,7 @@
 		</div>
 	  </nav>
       <!-- End Navbar --> 
+      
 		<section class="hero-large hero">
 			<div id="demo" class="carousel slide" data-ride="carousel">
 			  <ul class="carousel-indicators">

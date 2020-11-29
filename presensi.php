@@ -61,8 +61,15 @@
 				<a class="nav-link js-scroll-trigger" href="index.php">Home</a>
 			  </li>
 			  <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a>
-              </li>
+          <div class="dropdown">
+          <a class="dropdown-toggle nav-link" type="button" data-toggle="dropdown"> Menu</a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link js-scroll-trigger" href="#services">Tracking Barang</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Penerimaan</a></li>
+          </ul>
+        </div>
 			  </li>
 			  <li class="nav-item">
 				<a class="nav-link js-scroll-trigger" href="index.php">About</a>
@@ -77,7 +84,7 @@
         <div class="container">
 		<div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2"> Presensi </h2>
+            <h2 class="mb-md-2"> Presensi Pegawai</h2>
           </div>
 		</div> 
           
@@ -121,8 +128,7 @@
                     <label for="exampleInputPassword1">Tanggal Presensi</label>
                     <input type="date" class="form-control" id="exampleInputPassword1">
                 </div>
-                
-                <center> <button type="submit" class="btn btn-primary">ENTER</button> </center>
+                <center> <button type="submit" class="btn btn-primary">Submit</button> </center>
             </form>
         </div>
 
