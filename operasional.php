@@ -59,7 +59,7 @@
         <a class="nav-link js-scroll-trigger" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="operational.php">Operasional</a>
+        <a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a>
         </li> 
         <li class="nav-item">
         <a class="nav-link js-scroll-trigger" href="index.php">About</a>
@@ -117,11 +117,13 @@
       <label for="exampleInputPassword1">Harga Satuan</label>
       <input type="password" class="form-control" id="exampleInputPassword1">
     </div>
-    <div class="form-group form-check">
+      <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      <center>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      </center>
   </form>
 
 
