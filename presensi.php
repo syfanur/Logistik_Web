@@ -76,64 +76,103 @@
 	  </nav>
       <!-- End Navbar --> 
 
-      <section class="wt-section" id="absen">
+      <section class="wt-section" id="services">
         <div class="container">
 		<div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2"> Presensi Pegawai</h2>
+            <h2 class="mb-md-2">Presensi Pegawai Logistik</h2>
           </div>
 		</div> 
           
 
- 
-      <div class="col-md-12 col-sm-12 col-xs-12">
+        	
+    <div class="row">
+      <div class="col-md-8 col-sm-12 col-xs-12">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <b>Data Pegawai Manufaktur</b> 
+              </div>
+              <br>
+              <div class="panel-body">
+                <div class="list-group">
+
+                
+                  <?php
+
+                $url = file_get_contents('https://justiciable-exposur.000webhostapp.com/api/employee.php');
+                $pegawai = json_decode($url, true);
+
+                ?>
+                  <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>id_karyawan</th>
+                            <th>Nama</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Tanggal Lahir</th>
+                            <th>Jabatan</th>
+                            <th>Divisi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php 
+
+                    foreach ($pegawai as $data):
+                    ?>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        
+                        <?php 
+                    endforeach 
+                    ?>
+                    </tbody>
+                </table>
+              </div>
+              </div>
+          </div>
+
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
 
           <div class="panel panel-default">
               <div class="panel-heading">
-               <b>Data Presensi Pegawai</b> 
+               <b>Presensi Pegawai</b> 
+                
               </div> 
-              <form method="POST" action="dasboard.php">
-            <br><br>
-            <form>
+              <br>
+              <div class="panel-body">
+                  <div class="table-responsive">
+                  <form action="PresensiPost.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">ID Pegawai</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="exampleInputEmail1">ID Karyawan</label>
+                    <input type="number" class="form-control" name="id_karyawan" required>
                 </div>
                 
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Nama Pegawai</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1">
-                </div>
-                
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Jenis Kelamin</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1">
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Jabatan</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1">
-                </div>
-                
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Divisi</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1">
-                </div>
                 
                 <div class="form-group">
                     <label for="exampleInputPassword1">Tanggal Presensi</label>
                     <input type="date" class="form-control" id="exampleInputPassword1">
                 </div>
-                <center> <button type="submit" class="btn btn-primary">Submit</button> </center>
+                <center>   <input type = "submit" name ="submit" value = "Submit" class="btn btn-primary"> </center>
             </form>
-        </div>
+                  </div>
+              </div>
+          </div>
 
       </div>
   </div>
   <!-- /. ROW  -->
   
         </div>
-      </section>
+      </section> 
+
+    
 
   
     <!-- Footer -->

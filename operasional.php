@@ -102,27 +102,27 @@
    <form action="testpost.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleInputNama">Jenis Transaksi</label>
-      <input type="text" class="form-control" name="jenis_transaksi" aria-describedby="emailHelp">
+      <input type="text" class="form-control" name="jenis_transaksi" required>
     </div>
     <div class="form-group">
       <label for="exampleInputJenis">Divisi</label>
-      <input type="text" class="form-control" name="divisi" id="exampleInputJenis">
+      <input type="text" class="form-control" name="divisi" required>
     </div>
     <div class="form-group">
       <label for="exampleInputJenis">Tanggal</label>
-      <input type="date" class="form-control" name="tanggal" id="exampleInputJenis">
+      <input type="date" class="form-control" name="tanggal" required>
     </div>
     <div class="form-group">
       <label for="exampleInputBiaya">Biaya</label>
-      <input type="text" class="form-control" name="biaya" id="exampleInputBiaya">
+      <input type="text" class="form-control" name="biaya" required>
     </div>
     <div class="form-group">
       <label for="exampleInputBiaya">Keterangan</label>
-      <input type="text" class="form-control" name="keterangan" id="exampleInputBiaya">
+      <input type="text" class="form-control" name="keterangan" required>
     </div>
     <div class="form-group">
       <label for="exampleInputBiaya">Token</label>
-      <input type="text" class="form-control" name="token" placeholder="Retype: user_api123" id="exampleInputBiaya">
+      <input type="text" class="form-control" name="token" placeholder="Retype: user_api123" required>
     </div>
     <input type = "submit" name ="submit" value = "Submit" class="btn btn-primary">
       </center>
