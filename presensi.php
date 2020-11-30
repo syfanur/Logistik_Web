@@ -66,6 +66,7 @@
           <ul class="dropdown-menu">
             <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
             <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="pengiriman.php">Pengiriman</a></li>
             <li><a class="nav-link js-scroll-trigger" href="penerimaan.php">Penerimaan</a></li>
             <li><a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Laporan Penerimaan</a></li>
           </ul>
@@ -98,12 +99,28 @@
                 <div class="list-group">
 
                 
-                  <?php
+                <?php
 
-                $url = file_get_contents('https://justiciable-exposur.000webhostapp.com/api/employee.php');
-                $pegawai = json_decode($url, true);
+                $curl = curl_init();
 
-                ?>
+                curl_setopt_array($curl, array(
+                  CURLOPT_URL => 'https://justiciable-exposur.000webhostapp.com/api/employee.php',
+                  CURLOPT_RETURNTRANSFER => true,
+                  CURLOPT_ENCODING => '',
+                  CURLOPT_MAXREDIRS => 10,
+                  CURLOPT_TIMEOUT => 0,
+                  CURLOPT_FOLLOWLOCATION => true,
+                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                  CURLOPT_CUSTOMREQUEST => 'GET',
+                ));
+
+                $response = curl_exec($curl);
+
+                curl_close($curl);
+
+                $someArray = json_decode($response, true);
+
+                 ?>
                   <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
@@ -116,23 +133,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php 
-
-                    foreach ($pegawai as $data):
-                    ?>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                    <?php
+                    foreach ($someArray["response"] as $key => $value) {
+                      ?>
+                        <tr> 
+                            <td><?php echo $value['id_karyawan']; ?></td>
+                            <td><?php echo $value['nama']; ?></td>
+                            <td><?php echo $value['jenis_kelamin']; ?></td>
+                            <td><?php echo $value['tanggal_lahir']; ?></td>
+                            <td><?php echo $value['jabatan']; ?></td>
+                            <td><?php echo $value['divisi']; ?></td>
                         </tr>
-                        
-                        <?php 
-                    endforeach 
-                    ?>
                     </tbody>
+                    <?php
+                      }
+                      ?>
                 </table>
               </div>
               </div>

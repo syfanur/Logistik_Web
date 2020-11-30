@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Aplikasi Logistik</title>
+<html lang="en" class="no-js">
+  <!-- Head -->
+  <head>
+    <title>Aplikasi Logistik</title>
 
     <!-- Meta -->
     <meta charset="utf-8"/>
@@ -22,11 +23,11 @@
     <link rel="stylesheet" type="text/css" href="assets/vendors/slick-carousel/slick.css"> 
     <link rel="stylesheet" type="text/css" href="assets/fonts/themify-icons.css">
     <link rel="stylesheet" type="text/css" href="assets/vendors/magnific-popup/magnific-popup.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/hovereffects.css"> 
+	<link rel="stylesheet" type="text/css" href="assets/css/hovereffects.css"> 
     <!-- Theme Styles -->
     <link href="assets/css/scrolling-nav.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/css/theme.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/theme.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 
     <style type="text/css">
@@ -43,33 +44,40 @@
 </style>
   </head>
   <!-- End Head -->
- <body>
+
+  <body>
     <!-- Header -->
     <header id="top">
       <!-- Navbar --> 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Aplikasi<span>Logistik</span></a>  
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="ti-menu"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="index.php">Home</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="pengiriman.php">Pengiriman</a>
-        </li> 
-        <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="index.php">About</a>
-        </li>
-      </ul>
-      </div>
-    </div>
-    </nav>
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav">
+		<div class="container">
+		  <a class="navbar-brand js-scroll-trigger" href="#page-top">Aplikasi<span>Logistik</span></a>  
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="ti-menu"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link js-scroll-trigger" href="index.php">Home</a>
+			  </li>
+			  <li class="nav-item">
+          <div class="dropdown">
+          <a class="dropdown-toggle nav-link" type="button" data-toggle="dropdown"> Menu</a>
+          <ul class="dropdown-menu">
+            <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="pengiriman.php">Pengiriman</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="penerimaan.php">Penerimaan</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Laporan Penerimaan</a></li>
+          </ul>
+        </div>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </nav>
       <!-- End Navbar --> 
-   
+      
    <main role="main" class="mt-lg-5 m-0">
   
   <section class="wt-section" id="services">
