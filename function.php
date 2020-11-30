@@ -7,9 +7,10 @@ function create($data){
     global $koneksi;
     $tanggal_terima = $data["tanggal_terima"];
     $penerima = $data["penerima"];
+    $benefit = implode(", ",$data["benefit"]);
     
-    $query = "INSERT INTO penerimaan (id, tanggal_terima, penerima) VALUES 
-            ('', '$tanggal_terima', '$penerima')";
+    $query = "INSERT INTO penerimaan (id, nama_barang, tanggal_terima, penerima) VALUES 
+            ('', '$benefit', '$tanggal_terima', '$penerima')";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }

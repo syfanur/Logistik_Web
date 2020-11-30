@@ -104,19 +104,8 @@ if(create($_POST) > 0){
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
             <h2 class="mb-md-2">Penerimaan Barang</h2>
           </div>
-    </div> 
- 
-      <div class="col-md-12 col-sm-12 col-xs-12">
+    </div>
 
-          <div class="panel panel-default">
-              <div class="panel-heading">
-               <b>Form Data Barang</b> 
-                
-              </div> 
-              <br>
-              <div class="panel-body">
-                  <div class="table-responsive">
-                 
                    <?php
 
                 $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
@@ -124,41 +113,34 @@ if(create($_POST) > 0){
 
                 ?>
 
-<table class="table table-striped table-bordered table-hover">
-                          <thead>
-                              <tr>
-                                  <th>Nama Barang</th>
-                                  <th>Jumlah Barang</th>
-                                  <th>Biaya Barang</th>
-                                  <th>Tanggal Order</th>
-                                  <th>Nama Vendor</th>
-                                  <th>Action</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                          <?php 
-
-                    foreach ($data as $dataa):
-                    ?>
-
-                    <tr>
-                     <td><?=$dataa['Tanggal_Pengiriman']?></td>
-                     <td><?=$dataa['Duras_Pengiriman']?></td>
-                     <td><?=$dataa['Nama_Barang']?></td>
-                     <td><?=$dataa['No_Resi']?></td>
-                     <td><?=$dataa['Nama_Pengirim']?></td>
-                     <td> </td>
-                    
-                    </tr>
-
-                    <?php 
-                    endforeach 
-                    ?>
-
-                          </tbody>
-                      </table>
     <form action="" method="post" enctype="multipart/form-data">
-  
+    <div>
+  <label><b>Barang Tersedia</b></label>
+  </div>
+  <div class="form-check form-check-inline">
+    
+    <table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+          <th>Pilih Barang</th>
+          <th>Nama Barang</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php 
+    foreach ($data as $dataa):
+    ?>
+        <tr>
+          <td><center><input class="form-check-input" type="checkbox" value="<?=$dataa['Nama_Barang']?>" name="benefit[]"></center></td>
+          <td><label class="form-check-label"><?=$dataa['Nama_Barang']?></label></td>
+        </tr>
+    <?php 
+    endforeach 
+    ?>
+    </tbody>
+       </table>     
+  </div>
+                        
     <div class="form-group">
       <label>Tanggal Terima</label>
       <input type="date" class="form-control" name="tanggal_terima">
