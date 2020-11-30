@@ -71,7 +71,8 @@ $barang = read("SELECT * FROM penerimaan");
           <ul class="dropdown-menu">
             <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
             <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
-            <li><a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Penerimaan</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="penerimaan.php">Penerimaan</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Laporan Penerimaan</a></li>
           </ul>
         </div>
 			  </li>
