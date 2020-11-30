@@ -7,10 +7,10 @@ function create($data){
     global $koneksi;
     $tanggal_terima = $data["tanggal_terima"];
     $penerima = $data["penerima"];
-    $benefit = implode(", ",$data["benefit"]);
+    $barang = implode(", ",$data["barang"]);
     
     $query = "INSERT INTO penerimaan (id, nama_barang, tanggal_terima, penerima) VALUES 
-            ('', '$benefit', '$tanggal_terima', '$penerima')";
+            ('', '$barang', '$tanggal_terima', '$penerima')";
     mysqli_query($koneksi, $query);
     return mysqli_affected_rows($koneksi);
 }
@@ -26,4 +26,10 @@ function read($query){
     return $datas;
 }
 
+
+function delete($id){
+    global $koneksi;
+    mysqli_query($koneksi, "DELETE FROM penerimaan WHERE id=$id");
+    return mysqli_affected_rows($koneksi);
+}
 ?>

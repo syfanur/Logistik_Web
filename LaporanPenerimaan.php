@@ -91,7 +91,7 @@ $barang = read("SELECT * FROM penerimaan");
           </div>
     </div> 
  
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-8 col-sm-12 col-xs-12">
 
           <div class="panel panel-default">
               <div class="panel-heading">
@@ -113,12 +113,9 @@ $barang = read("SELECT * FROM penerimaan");
                               <tr>
                                   <th>No</th>
                                   <th>Nama Barang</th>
-                                  <th>Jumlah Barang</th>
-                                  <th>Biaya Barang</th>
-                                  <th>Tanggal Order</th>
-                                  <th>Nama Vendor</th>
                                   <th>Penerima</th>
                                   <th>Tanggal Terima</th>
+                                  <th>Action</th>
                               </tr>
                           </thead>
                           <tbody>
@@ -131,13 +128,13 @@ $barang = read("SELECT * FROM penerimaan");
         <?php $no++ ;?>
                     <tr>
                      <td><?=$no?></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
+                     <td><?= $data["nama_barang"]; ?></td>
                      <td><?= $data["penerima"]; ?></td>
                      <td><?= $data["tanggal_terima"]; ?></td>
+                     <td><button type="button" href="#" class="btn btn-success" data-toggle="modal">Kirim</button>
+                     <button type="button" href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal">Edit</button>
+                            <button  class="btn btn-danger"><a href="deleteBarang.php?id=<?= $data["id"]; ?>" style="color:white;">Delete</a></button></td>
+                            
                     </tr>
             
                    
@@ -159,6 +156,73 @@ $barang = read("SELECT * FROM penerimaan");
   
         </div>
       </section> 
+
+        <!-- modal edit -->
+        <div class="modal fade bd-example-modal-xl" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Data Penerimaan Barang</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            <div class="row">
+                            <div class="col-lg-12">
+                            <div class="card" style="height: 100%;">
+                                <div class="card-header" style="background-color: firebrick;">
+                            </div>
+                            <form action="" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+      <label>Tanggal Terima</label>
+      <input type="date" class="form-control" name="tanggal_terima" value="<?= $data["tanggal_terima"]; ?>">
+    </div>
+    <div class="form-group">
+      <label>Penerima</label>
+      <input type="text" class="form-control" name="penerima" value="<?= $data["penerima"]; ?>">
+    </div>
+    <div>
+    <label><b>Benefit</b></label>
+    </div>
+    <div class="form-check form-check-inline mb-5">
+    <?php
+
+                $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
+                $dataa = json_decode($url, true);
+
+                ?>
+
+    <?php 
+    foreach ($dataa as $item):
+    ?>
+    <table>
+        <tr>
+          <td><center><input class="form-check-input" type="checkbox" value="<?=$item['Nama_Barang']?>" name="barang[]"></center></td>
+          <td><label class="form-check-label"><?=$item['Nama_Barang']?></label></td>
+        </tr>
+        </table>
+    <?php 
+    endforeach 
+    ?>
+    </div>
+                    
+                                    
+                                </div>
+                               
+                        </div>
+                    </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" name="submit">Save changes</button>
+                        </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
 
   
     <!-- Footer -->

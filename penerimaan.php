@@ -131,7 +131,7 @@ if(create($_POST) > 0){
     foreach ($data as $dataa):
     ?>
         <tr>
-          <td><center><input class="form-check-input" type="checkbox" value="<?=$dataa['Nama_Barang']?>" name="benefit[]"></center></td>
+          <td><center><input class="form-check-input" type="checkbox" value="<?=$dataa['Nama_Barang']?>" name="barang[]"></center></td>
           <td><label class="form-check-label"><?=$dataa['Nama_Barang']?></label></td>
         </tr>
     <?php 
