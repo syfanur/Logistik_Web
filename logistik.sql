@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2020 at 06:18 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Nov 30, 2020 at 01:00 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,11 +29,22 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `penerimaan` (
   `id` int(50) NOT NULL,
-  `id_barang` int(50) NOT NULL,
-  `tanggal_terima` date NOT NULL,
-  `penerima` varchar(50) NOT NULL,
-  `timestamps` date NOT NULL
+  `nama_barang` varchar(400) DEFAULT NULL,
+  `jumlah_barang` varchar(200) DEFAULT NULL,
+  `biaya_barang` varchar(50) DEFAULT NULL,
+  `tanggal_order` date DEFAULT NULL,
+  `nama_vendor` varchar(200) DEFAULT NULL,
+  `tanggal_terima` date DEFAULT NULL,
+  `penerima` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `penerimaan`
+--
+
+INSERT INTO `penerimaan` (`id`, `nama_barang`, `jumlah_barang`, `biaya_barang`, `tanggal_order`, `nama_vendor`, `tanggal_terima`, `penerima`) VALUES
+(11, 'Ban Mobil, Vlag Mobil', NULL, NULL, NULL, NULL, '2020-11-01', 'cipa'),
+(12, 'Kopling', NULL, NULL, NULL, NULL, '2020-12-01', 'nur');
 
 -- --------------------------------------------------------
 
@@ -99,7 +109,7 @@ ALTER TABLE `tracking`
 -- AUTO_INCREMENT for table `penerimaan`
 --
 ALTER TABLE `penerimaan`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `pengiriman`
