@@ -1,23 +1,3 @@
-<?php
-require 'function2.php';
-if(isset($_POST["submit"])){
-if(create($_POST) > 0){
-    echo "
-    <div class='alert alert-success'>
-    <strong>Success!</strong> Data successfully has been created.
-    </div>
-    ";
-}else{
-    echo "
-    <div class='alert alert-danger'>
-    <strong>Success!</strong> Data failed to created.
-    </div>
-    ";
-}
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <!-- Head -->
@@ -97,14 +77,14 @@ if(create($_POST) > 0){
 		</div>
 	  </nav>
       <!-- End Navbar --> 
-      
+   
    <main role="main" class="mt-lg-5 m-0">
   
   <section class="wt-section" id="services">
         <div class="container">
     <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2">Data Pengiriman</h2>
+            <h2 class="mb-md-2">Form Penyimpanan Barang Ke Gudang</h2>
           </div>
     </div> 
  
@@ -112,57 +92,35 @@ if(create($_POST) > 0){
 
           <div class="panel panel-default">
               <div class="panel-heading">
-               <b>Form Data Pengiriman</b> 
+               <b>Form Barang Masuk</b> 
                 
               </div> 
               <br>
               <div class="panel-body">
                   <div class="table-responsive">
-                   <?php
-
-                $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
-                $data = json_decode($url, true);
-
-                ?>
-  <form action="" method="post" enctype="multipart/form-data">
+               
+   <form action="datamasuk.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="exampleInputLokasi">Lokasi Gudang</label>
-      <input type="Lokasi" class="form-control" id="exampleInputLokasi" aria-describedby="emailHelp">
+      <label for="exampleInputNama">Id Bahan Baku</label>
+      <input type="text" class="form-control" name="idbahanbaku" required>
     </div>
     <div class="form-group">
-      <label for="exampleInputNama">Nama Barang</label>
-      <input type="Nama" class="form-control" id="exampleInputNama">
+      <label for="exampleInputJenis">Transaksi</label>
+      <input type="text" class="form-control" name="transaksi" required>
     </div>
     <div class="form-group">
-      <label for="exampleInputJenis">Jenis Barang</label>
-      <input type="Jenis" class="form-control" id="exampleInputJenis">
+      <label for="exampleInputJenis">Tanggal</label>
+      <input type="date" class="form-control" name="tanggal" required>
     </div>
     <div class="form-group">
-      <label for="exampleInputKode">Kode Barang</label>
-      <input type="Kode" class="form-control" id="exampleInputKode">
+      <label for="exampleInputBiaya">Jumlah</label>
+      <input type="text" class="form-control" name="jumlah" required>
     </div>
     <div class="form-group">
-      <label for="exampleInputJumlah">Jumlah Barang</label>
-      <input type="Jumlah" class="form-control" id="exampleInputJumlah">
+      <label for="exampleInputBiaya">Ruang</label>
+      <input type="text" class="form-control" name="ruang" required>
     </div>
-    <div class="form-group">
-      <label for="exampleInputNoResi">No Resi</label>
-      <input type="NoResi" class="form-control" id="exampleInputNoResi">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputTanggal">Tanggal Pengiriman</label>
-      <input type="Tanggal" class="form-control" id="exampleInputTanggal">
-    </div>  
-    <div class="form-group">
-      <label for="exampleInputDurasi">Durasi Pengiriman</label>
-      <input type="Durasi" class="form-control" id="exampleInputDurasi">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPengirim">Nama Pengirim</label>
-      <input type="Pengirim" class="form-control" id="exampleInputPengirim">
-    </div>
-      <center>
-      <button type="submit" class="btn btn-primary">Submit</button>
+    <input type = "submit" name ="submit" value = "Submit" class="btn btn-primary">
       </center>
   </form>
 
