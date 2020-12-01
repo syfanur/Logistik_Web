@@ -135,7 +135,7 @@ $barang = read("SELECT * FROM penerimaan");
                      <td><?= $data["nama_barang"]; ?></td>
                      <td><?= $data["penerima"]; ?></td>
                      <td><?= $data["tanggal_terima"]; ?></td>
-                     <td><button type="button" href="#" class="btn btn-success" data-toggle="modal">Kirim</button>
+                     <td><a class="btn btn-success" href="pengiriman.php">Kirim</a>
                      <button type="button" href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal">Edit</button>
                             <button  class="btn btn-danger"><a href="deleteBarang.php?id=<?= $data["id"]; ?>" style="color:white;">Delete</a></button></td>
                             
