@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2020 at 01:00 PM
+-- Generation Time: Dec 05, 2020 at 04:20 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -63,6 +63,13 @@ CREATE TABLE `pengiriman` (
   `timestamps` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `pengiriman`
+--
+
+INSERT INTO `pengiriman` (`id`, `id_warehouse`, `id_penerimaan`, `nomor_resi`, `tanggal_pengiriman`, `pengirim`, `durasi_pengiriman`, `timestamps`) VALUES
+(1, 1, 11, 122345, '2020-12-01', 'syfa', '2 hari', '2020-12-01');
+
 -- --------------------------------------------------------
 
 --
@@ -76,6 +83,13 @@ CREATE TABLE `tracking` (
   `status` varchar(50) NOT NULL,
   `timestamps` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tracking`
+--
+
+INSERT INTO `tracking` (`id`, `id_pengiriman`, `lokasi_barang`, `status`, `timestamps`) VALUES
+(1, 1, 'Gudang A', 'proses', '2020-12-01');
 
 --
 -- Indexes for dumped tables
@@ -109,19 +123,19 @@ ALTER TABLE `tracking`
 -- AUTO_INCREMENT for table `penerimaan`
 --
 ALTER TABLE `penerimaan`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `pengiriman`
 --
 ALTER TABLE `pengiriman`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tracking`
 --
 ALTER TABLE `tracking`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
