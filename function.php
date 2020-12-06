@@ -26,6 +26,22 @@ function read($query){
     return $datas;
 }
 
+//update data
+function update($id){
+    global $koneksi;
+    $id = $_POST["id"];
+    $barang = $_POST["nama_barang"];
+    $tanggal_terima = $_POST["tanggal_terima"];
+    $penerima = $_POST["penerima"];
+
+    //query update
+    $query = "UPDATE penerimaan SET nama_barang='$barang' , tanggal_terima='$tanggal_terima', penerima ='$penerima 'WHERE id='$id' ";
+    mysqli_query($koneksi, $query);
+    return mysqli_affected_rows($koneksi);
+  
+
+}
+
 
 function delete($id){
     global $koneksi;

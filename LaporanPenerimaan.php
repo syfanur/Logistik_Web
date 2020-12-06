@@ -136,8 +136,8 @@ $barang = read("SELECT * FROM penerimaan");
                      <td><?= $data["penerima"]; ?></td>
                      <td><?= $data["tanggal_terima"]; ?></td>
                      <td><a class="btn btn-success" href="pengiriman.php">Kirim</a>
-                     <button type="button" href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal">Edit</button>
-                            <button  class="btn btn-danger"><a href="deleteBarang.php?id=<?= $data["id"]; ?>" style="color:white;">Delete</a></button></td>
+                     <button type="button" href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal" value="<?= $data["id"]; ?>">Edit</button>
+                     <button  class="btn btn-danger"><a href="deleteBarang.php?id=<?= $data["id"]; ?>" style="color:white;">Delete</a></button></td>
                             
                     </tr>
             
@@ -177,56 +177,43 @@ $barang = read("SELECT * FROM penerimaan");
                             <div class="card" style="height: 100%;">
                                 <div class="card-header" style="background-color: firebrick;">
                             </div>
-                            <form action="" method="post" enctype="multipart/form-data">
+      <form action="editBarang.php" method="POST" enctype="multipart/form-data">
+      <?php
+      $id = $data['id']; 
+      $query_edit = mysql_query("SELECT * FROM penerimaan WHERE id='$id'");
+      while ($row = mysql_fetch_array($query_edit)) {  
+      ?>
+      <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
       <div class="form-group">
       <label>Tanggal Terima</label>
       <input type="date" class="form-control" name="tanggal_terima" value="<?= $data["tanggal_terima"]; ?>">
-    </div>
-    <div class="form-group">
+      </div>
+      <div class="form-group">
       <label>Penerima</label>
       <input type="text" class="form-control" name="penerima" value="<?= $data["penerima"]; ?>">
-    </div>
-    <div>
-    <label><b>Benefit</b></label>
-    </div>
-    <div class="form-check form-check-inline mb-5">
-    <?php
-
-                $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
-                $dataa = json_decode($url, true);
-
-                ?>
-
-    <?php 
-    foreach ($dataa as $item):
-    ?>
-    <table>
-        <tr>
-          <td><center><input class="form-check-input" type="checkbox" value="<?=$item['Nama_Barang']?>" name="barang[]"></center></td>
-          <td><label class="form-check-label"><?=$item['Nama_Barang']?></label></td>
-        </tr>
-        </table>
-    <?php 
-    endforeach 
-    ?>
-    </div>
-                    
-                                    
+      </div>  
+      <div class="form-group">
+      <label>Nama Barang</label>
+      <input type="text" class="form-control" name="nama_barang" value="<?= $data["nama_barang"]; ?>">
+      </div>                                     
                                 </div>
                                
                         </div>
                     </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" name="submit">Save changes</button>
+                        <button type="submit" class="btn btn-primary" name="submit" href="editBarang.php?id=<?= $data["id"]; ?>">Save changes</button>
                         </div>
                     </form>
+                    <?php               
+                    } 
+                    ?>
                     </div>
                     </div>
                     </div>
                     </div>
                     </div>
-
+                
 
   
     <!-- Footer -->
@@ -275,14 +262,14 @@ $barang = read("SELECT * FROM penerimaan");
 
     <!-- Components Vendor  --> 
     <script src="assets/vendors/slick-carousel/slick.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js"></script>
     <script src="assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="assets/vendors/counters/waypoint.min.js"></script>
     <script src="assets/vendors/counters/counterup.min.js"></script>
 
-  <script src="assets/contact/jqBootstrapValidation.js"></script>
-  <script src="assets/contact/contact_me.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/contact/jqBootstrapValidation.js"></script>
+    <script src="assets/contact/contact_me.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="assets/js/scrolling-nav.js"></script>
     <!--Plugin Initialize-->
     <script src="assets/js/global.js"></script>
