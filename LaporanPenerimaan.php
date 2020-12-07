@@ -95,7 +95,7 @@ $barang = read("SELECT * FROM penerimaan");
           </div>
     </div> 
  
-      <div class="col-md-8 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
 
           <div class="panel panel-default">
               <div class="panel-heading">

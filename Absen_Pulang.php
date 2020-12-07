@@ -64,7 +64,7 @@
           <div class="dropdown">
           <a class="dropdown-toggle nav-link" type="button" data-toggle="dropdown"> Menu</a>
           <ul class="dropdown-menu">
-          <li><a class="nav-link js-scroll-trigger" href="TrackingBarang.php">Tracking Barang</a></li>
+          <li><a class="nav-link js-scroll-trigger" href="#services">Tracking Barang</a></li>
             <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
             <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
             <li><a class="nav-link js-scroll-trigger" href="pengiriman.php">Pengiriman</a></li>
@@ -79,76 +79,117 @@
 		</div>
 	  </nav>
       <!-- End Navbar --> 
-   
-   <main role="main" class="mt-lg-5 m-0">
-  
-  <section class="wt-section" id="services">
-        <div class="container">
-    <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
-          <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2"> Laporan Kehadiran Pegawai </h2>
-          </div>
-    </div> 
- 
- 
-      <div class="col-md-12 col-sm-12 col-xs-12">
 
+      <section class="wt-section" id="services">
+        <div class="container">
+		<div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
+          <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
+            <h2 class="mb-md-2">Presensi Pegawai</h2>
+          </div>
+		</div> 
+          
+
+        	
+    <div class="row">
+      <div class="col-md-8 col-sm-12 col-xs-12">
           <div class="panel panel-default">
               <div class="panel-heading">
-               <b> Data Kehadiran </b> 
-                
-              </div> 
+                <b>Data Presensi Pegawai</b> 
+              </div>
               <br>
               <div class="panel-body">
-                  <div class="table-responsive">
+                <div class="list-group">
+
+                
+                <?php
+
+                $curl = curl_init();
+
+                curl_setopt_array($curl, array(
+                  CURLOPT_URL => 'https://justiciable-exposur.000webhostapp.com/api/presensi_get.php?divisi=logistic',
+                  CURLOPT_RETURNTRANSFER => true,
+                  CURLOPT_ENCODING => '',
+                  CURLOPT_MAXREDIRS => 10,
+                  CURLOPT_TIMEOUT => 0,
+                  CURLOPT_FOLLOWLOCATION => true,
+                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                  CURLOPT_CUSTOMREQUEST => 'GET',
+                ));
+
+                $response = curl_exec($curl);
+
+                curl_close($curl);
+
+                $someArray = json_decode($response, true);
+
+                 ?>
+                  <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID Presensi</th>
+                            <th>Nama</th>
+                            <th>Waktu Kedatangan</th>
+                            <th>Waktu Pulang</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                     <?php
-
-                $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
-                $data = json_decode($url, true);
-
-                ?>
-                      <table class="table table-striped table-bordered table-hover">
-                          <thead>
-                              <tr>
-                                  <th> <center> ID Presensi </center> </th> 
-                                  <th> <center> Nama Pegawai </center> </th>
-                                  <th> <center> Divisi </center> </th>
-                                  <th> <center> Waktu Kedatangan </center> </th>
-                                  <th> <center> Waktu Kepergian </center> </th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                          <?php 
-
-                    foreach ($data as $dataa):
-                    ?>
-
-                    <tr>
-                     <td> </td>
-                     <td> </td>
-                     <td> </td>
-                     <td> </td>
-                     <td> </td>
-                    </tr>
-
-                    <?php 
-                    endforeach 
-                    ?>
-
-                          </tbody>
-                      </table>
-                  </div>
+                    foreach ($someArray["response"] as $key => $value) {
+                      ?>
+                        <tr> 
+                            <td><?php echo $value['id_presensi']; ?></td>
+                            <td><?php echo $value['nama']; ?></td>
+                            <td><?php echo $value['waktu_kedatangan']; ?></td>
+                            <td><?php echo $value['waktu_kepergian']; ?></td>
+                        </tr>
+                    </tbody>
+                    <?php
+                      }
+                      ?>
+                </table>
+              </div>
               </div>
           </div>
 
       </div>
+      
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+     <b>Presensi Pulang</b> 
+      
+    </div> 
+    <br>
+    <div class="panel-body">
+        <div class="table-responsive">
+        <form action="PresensiUpdate.php" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+          <label for="exampleInputEmail1">ID Presensi</label>
+          <input type="number" class="form-control" name="id" required>
+      </div>
+      
+      
+      <div class="form-group">
+          <label for="exampleInputPassword1">Tanggal Presensi</label>
+          <input type="date" class="form-control" id="exampleInputPassword1">
+      </div>
+      <center>   <input type = "submit" name ="submit" value = "Submit" class="btn btn-primary"> </center>
+  </form>
+        </div>
+    </div>
+</div>
+
+</div>
   </div>
   <!-- /. ROW  -->
   
         </div>
       </section> 
 
- 
+    
+
   
     <!-- Footer -->
     <footer class="bg-dark py-5">

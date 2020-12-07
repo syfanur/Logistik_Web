@@ -82,29 +82,97 @@
    
    <main role="main" class="mt-lg-5 m-0">
   
-  <section class="wt-section" id="services">
+
+      <section class="wt-section" id="services">
         <div class="container">
-    <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
+		<div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2">Form Penyimpanan Barang Ke Gudang</h2>
+            <h2 class="mb-md-2">Data Penyimpanan Warehouse</h2>
           </div>
-    </div> 
- 
-      <div class="col-md-12 col-sm-12 col-xs-12">
+		</div> 
+          
+
+        	
+    <div class="row">
+      <div class="col-md-8 col-sm-12 col-xs-12">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                <b>Data Kapatasitas Ruang Warehouse</b> 
+              </div>
+              <br>
+              <div class="panel-body">
+                <div class="list-group">
+
+                
+                <?php
+
+                $curl = curl_init();
+
+                curl_setopt_array($curl, array(
+                  CURLOPT_URL => 'https://warehouse13.000webhostapp.com/API_getdataruang.php',
+                  CURLOPT_RETURNTRANSFER => true,
+                  CURLOPT_ENCODING => '',
+                  CURLOPT_MAXREDIRS => 10,
+                  CURLOPT_TIMEOUT => 0,
+                  CURLOPT_FOLLOWLOCATION => true,
+                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                  CURLOPT_CUSTOMREQUEST => 'GET',
+                ));
+
+                $response = curl_exec($curl);
+
+                curl_close($curl);
+
+                $someArray = json_decode($response, true);
+
+                 ?>
+                  <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID Gudang</th>
+                            <th>ID Ruang</th>
+                            <th>ID Bahan Baku</th>
+                            <th>Sisa Kapasitas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach ($someArray["Data Kapasitas Ruang"] as $key => $value) {
+                      ?>
+                        <tr> 
+                            <td><?php echo $value['id gudang']; ?></td>
+                            <td><?php echo $value['id ruang']; ?></td>
+                            <td><?php echo $value['id bahan baku']; ?></td>
+                            <td><?php echo $value['sisa kapasitas']; ?></td>
+                        </tr>
+                    </tbody>
+                    <?php
+                      }
+                      ?>
+                </table>
+              </div>
+              </div>
+          </div>
+
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
 
           <div class="panel panel-default">
               <div class="panel-heading">
-               <b>Form Barang Masuk</b> 
+               <b>Presensi Pegawai</b> 
                 
               </div> 
               <br>
               <div class="panel-body">
                   <div class="table-responsive">
-               
-   <form action="datamasuk.php" method="post" enctype="multipart/form-data">
+                  <form action="datamasuk.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="exampleInputNama">Id Bahan Baku</label>
+      <label for="exampleInputNama">ID Bahan Baku</label>
       <input type="text" class="form-control" name="idbahanbaku" required>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputBiaya">ID Ruang</label>
+      <input type="text" class="form-control" name="ruang" required>
     </div>
     <div class="form-group">
       <label for="exampleInputJenis">Transaksi</label>
@@ -118,18 +186,22 @@
       <label for="exampleInputBiaya">Jumlah</label>
       <input type="text" class="form-control" name="jumlah" required>
     </div>
-    <div class="form-group">
-      <label for="exampleInputBiaya">Ruang</label>
-      <input type="text" class="form-control" name="ruang" required>
-    </div>
+    
     <input type = "submit" name ="submit" value = "Submit" class="btn btn-primary">
       </center>
   </form>
 
+                  </div>
+              </div>
+          </div>
 
-   
+      </div>
   </div>
-      </section>
+  <!-- /. ROW  -->
+  
+        </div>
+      </section> 
+
 
   
     <!-- Footer -->

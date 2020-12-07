@@ -84,7 +84,7 @@
         <div class="container">
 		<div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2">Presensi Pegawai Logistik</h2>
+            <h2 class="mb-md-2">Presensi Pegawai</h2>
           </div>
 		</div> 
           
@@ -94,7 +94,7 @@
       <div class="col-md-8 col-sm-12 col-xs-12">
           <div class="panel panel-default">
               <div class="panel-heading">
-                <b>Data Pegawai Manufaktur</b> 
+                <b>Data Pegawai Logistik</b> 
               </div>
               <br>
               <div class="panel-body">
@@ -106,7 +106,7 @@
                 $curl = curl_init();
 
                 curl_setopt_array($curl, array(
-                  CURLOPT_URL => 'https://justiciable-exposur.000webhostapp.com/api/employee.php',
+                  CURLOPT_URL => 'https://justiciable-exposur.000webhostapp.com/api/employee.php?divisi=logistic',
                   CURLOPT_RETURNTRANSFER => true,
                   CURLOPT_ENCODING => '',
                   CURLOPT_MAXREDIRS => 10,
@@ -131,7 +131,6 @@
                             <th>Jenis Kelamin</th>
                             <th>Tanggal Lahir</th>
                             <th>Jabatan</th>
-                            <th>Divisi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -144,7 +143,6 @@
                             <td><?php echo $value['jenis_kelamin']; ?></td>
                             <td><?php echo $value['tanggal_lahir']; ?></td>
                             <td><?php echo $value['jabatan']; ?></td>
-                            <td><?php echo $value['divisi']; ?></td>
                         </tr>
                     </tbody>
                     <?php
@@ -160,7 +158,7 @@
 
           <div class="panel panel-default">
               <div class="panel-heading">
-               <b>Presensi Pegawai</b> 
+               <b>Presensi Hadir</b> 
                 
               </div> 
               <br>
@@ -184,13 +182,16 @@
           </div>
 
       </div>
+
+
   </div>
   <!-- /. ROW  -->
   
+
+  <center><a class="btn btn-success"  href="Absen_Pulang.php">Lihat Laporan Presensi / Lakukan Absen Pulang</a></center>
         </div>
       </section> 
 
-    
 
   
     <!-- Footer -->
