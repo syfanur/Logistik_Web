@@ -197,23 +197,23 @@ $data = json_decode($url, true);
 
 <div class="form-group">
 <label>Barang</label>
-<input type="text" class="form-control" name="barang">
+<input type="text" class="form-control" name="barang" required>
 </div>
 <div class="form-group">
 <label>Jumlah</label>
-<input type="number" class="form-control" name="jumlah">
+<input type="number" class="form-control" name="jumlah" required> 
 </div> 
 <div class="form-group">
 <label>Vendor</label>
-<input type="text" class="form-control" name="vendor">
+<input type="text" class="form-control" name="vendor" required>
 </div>
 <div class="form-group">
 <label>Tanggal Terima</label>
-<input type="date" class="form-control" name="tanggal_terima">
+<input type="date" class="form-control" name="tanggal_terima" required>
 </div>
 <div class="form-group">
 <label>Penerima</label>
-<input type="text" class="form-control" name="penerima">
+<input type="text" class="form-control" name="penerima" required>
 </div>
 
 <button type="submit" class="btn btn-primary mr-3" name="submit">Terima Barang</button>

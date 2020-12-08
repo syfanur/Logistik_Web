@@ -15,8 +15,11 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS => array('id_presensi' => $id),
 ));
 
-$response = curl_exec($curl);
-
-curl_close($curl);
-echo $response;
+if ($response = curl_exec($curl)) {
+  # credirect ke page index
+  header("location:Absen_Pulang.php");    
+}
+else{
+  echo "ERROR, Gagal Memasukkan Data". mysqli_error();
+}
 ?>

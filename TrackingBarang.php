@@ -1,7 +1,6 @@
 <?php
-require 'function.php';
-$kirim = read("SELECT * FROM kirim");
-?>
+  include 'koneksi.php';
+  ?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -125,11 +124,13 @@ $kirim = read("SELECT * FROM kirim");
                           </thead>
                           <tbody>
                           
-                            <?php
-                            $no = 0;
-                            foreach ($kirim as $dataa):
-                            ?>
-                            <?php $no++ ;?>
+                          <?php 
+          $query = mysqli_query($koneksi, "SELECT * FROM kirim");
+          $no = 0;
+          while ($dataa = mysqli_fetch_assoc($query)) 
+          {
+          ?>
+          <?php $no++ ; ?>
 
                     <tr>
                      <td><?=$no?></td>
@@ -142,16 +143,80 @@ $kirim = read("SELECT * FROM kirim");
                      <td><?=$dataa['durasi']?></td>
                      <td><?=$dataa['pengirim']?></td>
                      <td><?=$dataa['status']?></td>
-                     <td><button type="button" href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal" value="<?= $data["id"]; ?>">Edit</button>
+                     <td> <a href="#" type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal<?php echo $dataa['id']; ?>">Edit</a>
+                   
                     </td> 
                     </tr>
-
-                    <?php 
-                    endforeach 
-                    ?>
-
-                          </tbody>
-                      </table>
+  <!-- Modal Edit Mahasiswa-->
+  <div class="modal fade" id="myModal<?php echo $dataa['id']; ?>" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Update Data Tracking Barang</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form role="form" action="editTracking.php" method="get">
+                        <?php
+                        $id = $dataa['id']; 
+                        $query_edit = mysqli_query($koneksi, "SELECT * FROM kirim WHERE id='$id'");
+                        while ($row = mysqli_fetch_array($query_edit)) {  
+                        ?>
+                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                        <div class="form-group">
+                          <label>Nama Barang</label>
+                          <input type="text" name="barang" class="form-control" value="<?php echo $row['nama_barang']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Jumlah Barang</label>
+                          <input type="number" name="jumlah" class="form-control" value="<?php echo $row['jumlah_barang']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Nama Vendor</label>
+                          <input type="text" name="vendor" class="form-control" value="<?php echo $row['nama_vendor']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Tujuan Gudang</label>
+                          <input type="text" name="gudang" class="form-control" value="<?php echo $row['tujuan_gedung']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>No Resi</label>
+                          <input type="number" name="resi" class="form-control" value="<?php echo $row['no_resi']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Tanggal Pengiriman</label>
+                          <input type="date" name="tanggal" class="form-control" value="<?php echo $row['tanggal_pengiriman']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Durasi Pengiriman</label>
+                          <input type="number" name="durasi" class="form-control" value="<?php echo $row['durasi']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Nama Pengirim</label>
+                          <input type="text" name="pengirim" class="form-control" value="<?php echo $row['pengirim']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Status Pengiriman</label>
+                          <input type="text" name="status" class="form-control" value="<?php echo $row['status']; ?>">      
+                        </div>
+                        <div class="modal-footer">  
+                          <button type="submit" class="btn btn-success">Update</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                        <?php 
+                        }
+                        ?>        
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php               
+          } 
+          ?>
+        </tbody>
+      </table>    
                   </div>
               </div>
           </div>

@@ -122,10 +122,11 @@
                           
                           <?php 
           $query = mysqli_query($koneksi, "SELECT * FROM penerimaan");
-          $no = 1;
+          $no = 0;
           while ($data = mysqli_fetch_assoc($query)) 
           {
           ?>
+             <?php $no++ ; ?>
                     <tr>
                      <td><?=$no?></td>
                      <td><?= $data["nama_barang"]; ?></td>

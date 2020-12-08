@@ -20,8 +20,18 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS => array('jenis_transaksi' => $jenis_transaksi,'divisi' => $divisi,'tanggal' => $tanggal,'biaya' => $biaya,'keterangan' => $keterangan,'token' => $token),
 ));
 
-$response = curl_exec($curl);
+// $response = curl_exec($curl);
 
-curl_close($curl);
-echo $response;
+// curl_close($curl);
+// echo $response;
+
+if ($response = curl_exec($curl)) {
+  # credirect ke page index
+  header("location:Index.php");    
+}
+else{
+  echo "ERROR, Gagal Memasukkan Data". mysqli_error();
+}
+
+
 ?>

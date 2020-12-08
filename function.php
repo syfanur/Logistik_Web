@@ -14,9 +14,16 @@ function create($data){
 
     $query = "INSERT INTO penerimaan (id, nama_barang, jumlah_barang, nama_vendor, tanggal_terima, penerima) VALUES 
             ('', '$barang', '$jumlah', '$vendor','$tanggal_terima', '$penerima')";
-    mysqli_query($koneksi, $query);
-    return mysqli_affected_rows($koneksi);
+    
+    if (mysqli_query($koneksi, $query)) {
+        # credirect ke page index
+        header("location:LaporanPenerimaan.php");    
+    }
+    else{
+        echo "ERROR, data gagal dikirim". mysqli_error();
+    }
 }
+
 
 //select data
 function read($query){

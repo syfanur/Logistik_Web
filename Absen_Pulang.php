@@ -172,8 +172,8 @@
       
       
       <div class="form-group">
-          <label for="exampleInputPassword1">Tanggal Presensi</label>
-          <input type="date" class="form-control" id="exampleInputPassword1">
+          <label for="exampleInputPassword1">Waktu Pulang</label>
+          <input type="time" class="form-control" id="exampleInputPassword1">
       </div>
       <center>   <input type = "submit" name ="submit" value = "Submit" class="btn btn-primary"> </center>
   </form>

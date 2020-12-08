@@ -17,10 +17,13 @@ $koneksi = mysqli_connect('localhost','root','','logistik');
     durasi, pengirim, status) VALUES 
             ('', '$barang', '$jumlah', '$vendor', '$gudang', '$resi', '$tanggal', 
             '$durasi', '$pengirim', '$status')";
-    mysqli_query($koneksi, $query);
-    return mysqli_affected_rows($koneksi);
-    
-
+    if (mysqli_query($koneksi, $query)) {
+        # credirect ke page index
+        header("location:TrackingBarang.php");    
+    }
+    else{
+        echo "ERROR, data gagal dikirim". mysqli_error();
+    }
 
 //select data
 function read($query){
