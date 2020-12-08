@@ -64,10 +64,9 @@
           <div class="dropdown">
           <a class="dropdown-toggle nav-link" type="button" data-toggle="dropdown"> Menu</a>
           <ul class="dropdown-menu">
-          <li><a class="nav-link js-scroll-trigger" href="TrackingBarang.php">Tracking Barang</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="TrackingBarang.php">Tracking Barang</a></li>
             <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
             <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
-            <li><a class="nav-link js-scroll-trigger" href="pengiriman.php">Pengiriman</a></li>
             <li><a class="nav-link js-scroll-trigger" href="penerimaan.php">Penerimaan</a></li>
             <li><a class="nav-link js-scroll-trigger" href="penyimpanan.php">Penyimpanan</a></li>
             <li><a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Laporan Penerimaan</a></li>

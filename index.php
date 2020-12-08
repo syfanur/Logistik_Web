@@ -67,7 +67,6 @@
             <li><a class="nav-link js-scroll-trigger" href="TrackingBarang.php">Tracking Barang</a></li>
             <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
             <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
-            <li><a class="nav-link js-scroll-trigger" href="pengiriman.php">Pengiriman</a></li>
             <li><a class="nav-link js-scroll-trigger" href="penerimaan.php">Penerimaan</a></li>
             <li><a class="nav-link js-scroll-trigger" href="penyimpanan.php">Penyimpanan</a></li>
             <li><a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Laporan Penerimaan</a></li>
@@ -153,11 +152,65 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div> 
+</div>  
+
+<br></br>
+
+<div class="card-group" style="color:#FFFFF0">
+  <div class="card">
+    <img src="assets\img\ava\hijab1.jpg"  class="card-img-top" alt="gambar">
+    <div class="card-body">
+      <h5 class="card-title">Syfa Nur Lathifah</h5>
+      <p class="card-text">Ketua</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Divisi Logistik</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="assets\img\ava\hijab2.jpg"  class="card-img-top" alt="gambar">
+    <div class="card-body">
+      <h5 class="card-title">Sherly Fratista</h5>
+      <p class="card-text">Anggota</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Divisi Logistik</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="assets\img\ava\hijab3.jpg"  class="card-img-top" alt="gambar">
+    <div class="card-body">
+      <h5 class="card-title">Nurul Farikhah</h5>
+      <p class="card-text">Anggota</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Divisi Logistik</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="assets\img\ava\hijab4.jpg"  class="card-img-top" alt="gambar">
+    <div class="card-body">
+      <h5 class="card-title">Neila Fadhila Putri</h5>
+      <p class="card-text">Anggota</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Divisi Logistik</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="assets\img\ava\hijab5.jpg" class="card-img-top" alt="gambar">
+    <div class="card-body">
+      <h5 class="card-title">Lulu Fairuz Husniah</h5>
+      <p class="card-text">Anggota</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Divisi Logistik</small>
+    </div>
+  </div>
+</div>
+
         </div>
       </section> 
-
-  
 
 <section class="wt-section bg-light" id="contact">
     <div class="container">

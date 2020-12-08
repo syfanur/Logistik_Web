@@ -61,7 +61,7 @@ $barangDetail  = read("SELECT * FROM penerimaan where id = $id")[0];
   <body>
     <!-- Header -->
     <header id="top">
-      <!-- Navbar --> 
+     <!-- Navbar --> 
 	  <nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top" id="mainNav">
 		<div class="container">
 		  <a class="navbar-brand js-scroll-trigger" href="#page-top">Aplikasi<span>Logistik</span></a>  
@@ -77,10 +77,9 @@ $barangDetail  = read("SELECT * FROM penerimaan where id = $id")[0];
           <div class="dropdown">
           <a class="dropdown-toggle nav-link" type="button" data-toggle="dropdown"> Menu</a>
           <ul class="dropdown-menu">
-          <li><a class="nav-link js-scroll-trigger" href="#services">Tracking Barang</a></li>
+            <li><a class="nav-link js-scroll-trigger" href="TrackingBarang.php">Tracking Barang</a></li>
             <li><a class="nav-link js-scroll-trigger" href="presensi.php">Presensi</a></li>
             <li><a class="nav-link js-scroll-trigger" href="operasional.php">Operasional</a></li>
-            <li><a class="nav-link js-scroll-trigger" href="pengiriman.php">Pengiriman</a></li>
             <li><a class="nav-link js-scroll-trigger" href="penerimaan.php">Penerimaan</a></li>
             <li><a class="nav-link js-scroll-trigger" href="penyimpanan.php">Penyimpanan</a></li>
             <li><a class="nav-link js-scroll-trigger" href="LaporanPenerimaan.php">Laporan Penerimaan</a></li>
