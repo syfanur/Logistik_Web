@@ -1,21 +1,19 @@
 <?php
-require 'function.php';
-$id = $_POST["id"];
-if(update($id) > 0){
-    echo "
-    <div class='alert alert-success'>
-    <strong>Success!</strong> Data successfully has been update.
-    </div>
-    <script>
-        document.location.href = 'LaporanPenerimaan.php';
-    </script>";
-}else{
-    echo "
-    <div class='alert alert-danger'>
-    <strong>Failed!</strong> Sorry!! Your data failed to update.
-    </div>
-    <script>
-        document.location.href = 'LaporanPenerimaan.php';
-    </script>";
+include('koneksi.php');
+$id = $_GET['id'];
+$tanggal_terima = $_GET["tanggal"];
+$penerima = $_GET["penerima"];
+$barang = $_GET["barang"];
+$jumlah = $_GET["jumlah"];
+$vendor = $_GET["vendor"];
+//query update
+$query = "UPDATE penerimaan SET nama_barang='$barang' , jumlah_barang='$jumlah' , nama_vendor='$vendor', 
+tanggal_terima='$tanggal_terima', penerima='$penerima'  WHERE id='$id' ";
+if (mysqli_query($koneksi, $query)) {
+    # credirect ke page index
+    header("location:LaporanPenerimaan.php");    
+}
+else{
+    echo "ERROR, data gagal diupdate". mysqli_error();
 }
 ?>

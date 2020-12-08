@@ -1,3 +1,8 @@
+<?php
+require 'function.php';
+$kirim = read("SELECT * FROM kirim");
+?>
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
   <!-- Head -->
@@ -86,7 +91,7 @@
         <div class="container">
     <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2">Operasional Logistik</h2>
+            <h2 class="mb-md-2">Tracking Barang</h2>
           </div>
     </div> 
  
@@ -101,40 +106,44 @@
               <br>
               <div class="panel-body">
                   <div class="table-responsive">
-                    <?php
-
-                $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
-                $data = json_decode($url, true);
-
-                ?>
+                   
                       <table class="table table-striped table-bordered table-hover">
                           <thead>
                               <tr>
-                                  <th>Tanggal Pengiriman</th>
-                                  <th>Durasi Pengiriman</th>
+                                  <th>No</th>
                                   <th>Nama Barang</th>
+                                  <th>Jumlah Barang</th>
+                                  <th>Nama Vendor</th>
+                                  <th>Tujuan Gedung</th>
                                   <th>No Resi</th>
+                                  <th>Tanggal Pengirim</th>
+                                  <th>Durasi</th>
                                   <th>Pengirim</th>
-                                  <th>Lokasi Barang</th>
                                   <th>Status</th>
-                                  <th>Tujuan</th>
+                                  <th>Action</th>
                               </tr>
                           </thead>
                           <tbody>
-                          <?php 
-
-                    foreach ($data as $dataa):
-                    ?>
+                          
+                            <?php
+                            $no = 0;
+                            foreach ($kirim as $dataa):
+                            ?>
+                            <?php $no++ ;?>
 
                     <tr>
-                     <td><?=$dataa['Tanggal_Pengiriman']?></td>
-                     <td><?=$dataa['Duras_Pengiriman']?></td>
-                     <td><?=$dataa['Nama_Barang']?></td>
-                     <td><?=$dataa['No_Resi']?></td>
-                     <td><?=$dataa['Nama_Pengirim']?></td>
-                     <td><?=$dataa['Lokasi_Barang']?></td>
-                     <td><?=$dataa['Status']?></td>
-                     <td><?=$dataa['Tujuan_Pengiriman']?></td>
+                     <td><?=$no?></td>
+                     <td><?=$dataa['nama_barang']?></td>
+                     <td><?=$dataa['jumlah_barang']?></td>
+                     <td><?=$dataa['nama_vendor']?></td>
+                     <td><?=$dataa['tujuan_gedung']?></td>
+                     <td><?=$dataa['no_resi']?></td>
+                     <td><?=$dataa['tanggal_pengiriman']?></td>
+                     <td><?=$dataa['durasi']?></td>
+                     <td><?=$dataa['pengirim']?></td>
+                     <td><?=$dataa['status']?></td>
+                     <td><button type="button" href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal" value="<?= $data["id"]; ?>">Edit</button>
+                    </td> 
                     </tr>
 
                     <?php 

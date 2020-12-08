@@ -128,6 +128,14 @@ $barangDetail  = read("SELECT * FROM penerimaan where id = $id")[0];
       <input type="text" class="form-control" id="exampleInputKode" name="vendor" value="<?= $barangDetail["nama_vendor"]; ?>">
     </div>
     <div class="form-group">
+      <label for="exampleInputTanggal">Tanggal Penerimaan</label>
+      <input type="date" class="form-control" id="exampleInputTanggal" name="tanggal" value="<?= $barangDetail["tanggal_terima"]; ?>">
+    </div> 
+    <div class="form-group">
+      <label for="exampleInputTanggal">Tanggal Pengiriman</label>
+      <input type="date" class="form-control" id="exampleInputTanggal" name="tanggal">
+    </div>  
+    <div class="form-group">
       <label for="exampleInputJumlah">Tujuan Gudang</label>
       <input type="text" class="form-control" id="exampleInputJumlah" name="tujuan">
     </div>
@@ -135,10 +143,6 @@ $barangDetail  = read("SELECT * FROM penerimaan where id = $id")[0];
       <label for="exampleInputNoResi">No Resi</label>
       <input type="number" class="form-control" id="exampleInputNoResi" name="resi">
     </div>
-    <div class="form-group">
-      <label for="exampleInputTanggal">Tanggal Pengiriman</label>
-      <input type="date" class="form-control" id="exampleInputTanggal" name="tanggal">
-    </div>  
     <div class="form-group">
       <label for="exampleInputDurasi">Estimasi Durasi Pengiriman</label>
       <input type="number" class="form-control" id="exampleInputDurasi" name="durasi">

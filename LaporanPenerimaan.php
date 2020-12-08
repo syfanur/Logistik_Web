@@ -1,7 +1,3 @@
-<?php
-require 'function.php';
-$barang = read("SELECT * FROM penerimaan");
-?>
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -51,6 +47,9 @@ $barang = read("SELECT * FROM penerimaan");
   <!-- End Head -->
 
   <body>
+  <?php
+  include 'koneksi.php';
+  ?>
     <!-- Header -->
     <header id="top">
       <!-- Navbar --> 
@@ -121,12 +120,12 @@ $barang = read("SELECT * FROM penerimaan");
                           </thead>
                           <tbody>
                           
-                          <?php
-                            $no = 0;
-            foreach($barang as $data):
-              
-        ?>
-        <?php $no++ ;?>
+                          <?php 
+          $query = mysqli_query($koneksi, "SELECT * FROM penerimaan");
+          $no = 1;
+          while ($data = mysqli_fetch_assoc($query)) 
+          {
+          ?>
                     <tr>
                      <td><?=$no?></td>
                      <td><?= $data["nama_barang"]; ?></td>
@@ -135,18 +134,65 @@ $barang = read("SELECT * FROM penerimaan");
                      <td><?= $data["penerima"]; ?></td>
                      <td><?= $data["tanggal_terima"]; ?></td>
                      <td><a class="btn btn-success" href="pengiriman.php?id=<?= $data["id"]; ?>">Kirim</a>
-                     <button type="button" href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal" value="<?= $data["id"]; ?>">Edit</button>
-                     <button  class="btn btn-danger"><a href="deleteBarang.php?id=<?= $data["id"]; ?>" style="color:white;">Delete</a></button></td>
+                     <a href="#" type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModal<?php echo $data['id']; ?>">Edit</a>
+                      <button  class="btn btn-danger"><a href="deleteBarang.php?id=<?= $data["id"]; ?>" style="color:white;">Delete</a></button></td>
                             
                     </tr>
             
-                   
-
-                          </tbody>
-                          <?php
-                        endforeach;
-        ?>
-                      </table>
+                  <!-- Modal Edit Mahasiswa-->
+            <div class="modal fade" id="myModal<?php echo $data['id']; ?>" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Update Data Penerimaan</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form role="form" action="editBarang.php" method="get">
+                        <?php
+                        $id = $data['id']; 
+                        $query_edit = mysqli_query($koneksi, "SELECT * FROM penerimaan WHERE id='$id'");
+                        while ($row = mysqli_fetch_array($query_edit)) {  
+                        ?>
+                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                        <div class="form-group">
+                          <label>Nama Barang</label>
+                          <input type="text" name="barang" class="form-control" value="<?php echo $row['nama_barang']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Jumlah Barang</label>
+                          <input type="number" name="jumlah" class="form-control" value="<?php echo $row['jumlah_barang']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Nama Vendor</label>
+                          <input type="text" name="vendor" class="form-control" value="<?php echo $row['nama_vendor']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Penerima</label>
+                          <input type="text" name="penerima" class="form-control" value="<?php echo $row['penerima']; ?>">      
+                        </div>
+                        <div class="form-group">
+                          <label>Tanggal Terima</label>
+                          <input type="date" name="tanggal" class="form-control" value="<?php echo $row['tanggal_terima']; ?>">      
+                        </div>
+                        <div class="modal-footer">  
+                          <button type="submit" class="btn btn-success">Update</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                        <?php 
+                        }
+                        ?>        
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php               
+          } 
+          ?>
+        </tbody>
+      </table>    
                       
         
                   </div>
@@ -160,58 +206,7 @@ $barang = read("SELECT * FROM penerimaan");
         </div>
       </section> 
 
-        <!-- modal edit -->
-        <div class="modal fade bd-example-modal-xl" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-xl">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Edit Data Penerimaan Barang</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                            <div class="row">
-                            <div class="col-lg-12">
-                            <div class="card" style="height: 100%;">
-                                <div class="card-header" style="background-color: firebrick;">
-                            </div>
-      <form action="editBarang.php" method="POST" enctype="multipart/form-data">
-      <?php
-      $id = $data['id']; 
-      $query_edit = mysql_query("SELECT * FROM penerimaan WHERE id='$id'");
-      while ($row = mysql_fetch_array($query_edit)) {  
-      ?>
-      <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-      <div class="form-group">
-      <label>Tanggal Terima</label>
-      <input type="date" class="form-control" name="tanggal_terima" value="<?= $data["tanggal_terima"]; ?>">
-      </div>
-      <div class="form-group">
-      <label>Penerima</label>
-      <input type="text" class="form-control" name="penerima" value="<?= $data["penerima"]; ?>">
-      </div>  
-      <div class="form-group">
-      <label>Nama Barang</label>
-      <input type="text" class="form-control" name="nama_barang" value="<?= $data["nama_barang"]; ?>">
-      </div>                                     
-                                </div>
-                               
-                        </div>
-                    </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary" name="submit" href="editBarang.php?id=<?= $data["id"]; ?>">Save changes</button>
-                        </div>
-                    </form>
-                    <?php               
-                    } 
-                    ?>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
-                    </div>
+     
                 
 
   
