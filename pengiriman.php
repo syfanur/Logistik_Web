@@ -114,45 +114,45 @@ $barangDetail  = read("SELECT * FROM penerimaan where id = $id")[0];
               <div class="panel-body">
                   <div class="table-responsive">
                
-  <form action="" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-      <label for="exampleInputLokasi">Lokasi Gudang</label>
-      <input type="Lokasi" class="form-control" id="exampleInputLokasi" aria-describedby="emailHelp">
-    </div>
+  <form action="function2.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleInputNama">Nama Barang</label>
-      <input type="Nama" class="form-control" id="exampleInputNama" value="<?= $barangDetail["nama_barang"]; ?>">
+      <input type="text" class="form-control" id="exampleInputNama" name="nama" value="<?= $barangDetail["nama_barang"]; ?>">
     </div>
     <div class="form-group">
-      <label for="exampleInputJenis">Jenis Barang</label>
-      <input type="Jenis" class="form-control" id="exampleInputJenis">
+      <label for="exampleInputJenis">Jumlah Barang</label>
+      <input type="number" class="form-control" id="exampleInputJenis" name="jumlah" value="<?= $barangDetail["jumlah_barang"]; ?>">
     </div>
     <div class="form-group">
-      <label for="exampleInputKode">Kode Barang</label>
-      <input type="Kode" class="form-control" id="exampleInputKode">
+      <label for="exampleInputKode">Nama Vendor</label>
+      <input type="text" class="form-control" id="exampleInputKode" name="vendor" value="<?= $barangDetail["nama_vendor"]; ?>">
     </div>
     <div class="form-group">
-      <label for="exampleInputJumlah">Jumlah Barang</label>
-      <input type="Jumlah" class="form-control" id="exampleInputJumlah">
+      <label for="exampleInputJumlah">Tujuan Gudang</label>
+      <input type="text" class="form-control" id="exampleInputJumlah" name="tujuan">
     </div>
     <div class="form-group">
       <label for="exampleInputNoResi">No Resi</label>
-      <input type="NoResi" class="form-control" id="exampleInputNoResi">
+      <input type="number" class="form-control" id="exampleInputNoResi" name="resi">
     </div>
     <div class="form-group">
       <label for="exampleInputTanggal">Tanggal Pengiriman</label>
-      <input type="Tanggal" class="form-control" id="exampleInputTanggal">
+      <input type="date" class="form-control" id="exampleInputTanggal" name="tanggal">
     </div>  
     <div class="form-group">
-      <label for="exampleInputDurasi">Durasi Pengiriman</label>
-      <input type="Durasi" class="form-control" id="exampleInputDurasi">
+      <label for="exampleInputDurasi">Estimasi Durasi Pengiriman</label>
+      <input type="number" class="form-control" id="exampleInputDurasi" name="durasi">
     </div>
     <div class="form-group">
       <label for="exampleInputPengirim">Nama Pengirim</label>
-      <input type="Pengirim" class="form-control" id="exampleInputPengirim">
+      <input type="text" class="form-control" id="exampleInputPengirim" name="pengirim">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPengirim">Status</label>
+      <input type="text" class="form-control" id="exampleInputPengirim" value="Dalam Perjalanan" name="status">
     </div>
       <center>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Kirim Barang ke Gudang</button>
       </center>
   </form>
 
