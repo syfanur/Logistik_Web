@@ -159,7 +159,7 @@
 
           <div class="panel panel-default">
               <div class="panel-heading">
-               <b>Presensi Pegawai</b> 
+               <b>Barang Masuk Gudang</b> 
                 
               </div> 
               <br>

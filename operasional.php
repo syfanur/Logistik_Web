@@ -103,12 +103,15 @@
                
    <form action="testpost.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="exampleInputNama">Jenis Transaksi</label>
-      <input type="text" class="form-control" name="jenis_transaksi" required>
+    <label for="exampleInputNama">Jenis Transaksi</label>
+<select id="jenis_transaksi" class="form-control" name="jenis_transaksi">
+  <option value="pengeluaran">Pengeluaran</option>
+</select>
+      
     </div>
     <div class="form-group">
-      <label for="exampleInputJenis">Divisi</label>
-      <input type="text" class="form-control" name="divisi" required>
+      <label for="exampleInputJenis">ID Divisi</label>
+      <input type="text" class="form-control" name="divisi" placeholder="Logistik : 4" required>
     </div>
     <div class="form-group">
       <label for="exampleInputJenis">Tanggal</label>
@@ -116,7 +119,7 @@
     </div>
     <div class="form-group">
       <label for="exampleInputBiaya">Biaya</label>
-      <input type="text" class="form-control" name="biaya" required>
+      <input type="number" class="form-control" name="biaya" required>
     </div>
     <div class="form-group">
       <label for="exampleInputBiaya">Keterangan</label>

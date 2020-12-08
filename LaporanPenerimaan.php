@@ -105,18 +105,15 @@ $barang = read("SELECT * FROM penerimaan");
               <br>
               <div class="panel-body">
                   <div class="table-responsive">
-                   <?php
-
-                $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
-                $data = json_decode($url, true);
-
-                ?>
+                   
 
    <table class="table table-striped table-bordered table-hover">
                           <thead>
                               <tr>
                                   <th>No</th>
                                   <th>Nama Barang</th>
+                                  <th>Jumlah Barang</th>
+                                  <th>Nama Vendor</th>
                                   <th>Penerima</th>
                                   <th>Tanggal Terima</th>
                                   <th>Action</th>
@@ -133,9 +130,11 @@ $barang = read("SELECT * FROM penerimaan");
                     <tr>
                      <td><?=$no?></td>
                      <td><?= $data["nama_barang"]; ?></td>
+                     <td><?= $data["jumlah_barang"]; ?></td>
+                     <td><?= $data["nama_vendor"]; ?></td>
                      <td><?= $data["penerima"]; ?></td>
                      <td><?= $data["tanggal_terima"]; ?></td>
-                     <td><a class="btn btn-success" href="pengiriman.php">Kirim</a>
+                     <td><a class="btn btn-success" href="pengiriman.php?id=<?= $data["id"]; ?>">Kirim</a>
                      <button type="button" href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal" value="<?= $data["id"]; ?>">Edit</button>
                      <button  class="btn btn-danger"><a href="deleteBarang.php?id=<?= $data["id"]; ?>" style="color:white;">Delete</a></button></td>
                             

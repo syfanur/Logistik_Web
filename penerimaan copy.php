@@ -106,7 +106,7 @@ if(create($_POST) > 0){
         <div class="container">
 		<div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
           <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
-            <h2 class="mb-md-2">Penerimaan Barang</h2>
+            <h2 class="mb-md-2">Presensi Pegawai</h2>
           </div>
 		</div> 
           
@@ -194,19 +194,34 @@ $data = json_decode($url, true);
 ?>
 
 <form action="" method="post" enctype="multipart/form-data">
+<div>
+<label><b>Barang Tersedia</b></label>
+</div>
+<div class="form-check form-check-inline">
 
-<div class="form-group">
-<label>Barang</label>
-<input type="text" class="form-control" name="barang">
+<table class="table table-striped table-bordered table-hover">
+<thead>
+<tr>
+<th>Pilih Barang</th>
+<th>Nama Barang</th>
+
+</tr>
+</thead>
+<tbody>
+<?php 
+foreach ($data as $dataa):
+?>
+<tr>
+<td><center><input class="form-check-input" type="checkbox" value="<?=$dataa['Nama_Barang']?>" name="barang[]"></center></td>
+<td><label class="form-check-label"><?=$dataa['Nama_Barang']?></label></td>
+</tr>
+<?php 
+endforeach 
+?>
+</tbody>
+</table>     
 </div>
-<div class="form-group">
-<label>Jumlah</label>
-<input type="number" class="form-control" name="jumlah">
-</div> 
-<div class="form-group">
-<label>Vendor</label>
-<input type="text" class="form-control" name="vendor">
-</div>
+        
 <div class="form-group">
 <label>Tanggal Terima</label>
 <input type="date" class="form-control" name="tanggal_terima">
@@ -216,7 +231,7 @@ $data = json_decode($url, true);
 <input type="text" class="form-control" name="penerima">
 </div>
 
-<button type="submit" class="btn btn-primary mr-3" name="submit">Terima Barang</button>
+<button type="submit" class="btn btn-primary mr-3" name="submit">Submit</button>
 
 </center>
 </form>
@@ -230,11 +245,136 @@ $data = json_decode($url, true);
   <!-- /. ROW  -->
 
 
+  <div class="col-md-4 col-sm-12 col-xs-12">
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+  
+      
+    </div> 
+    <br>
+    <div class="panel-body">
+        <div class="table-responsive">
+        <?php
+
+$url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
+$data = json_decode($url, true);
+
+?>
+
+<form action="" method="post" enctype="multipart/form-data">
+<div>
+<label><b>Barang Tersedia</b></label>
+</div>
+<div class="form-check form-check-inline">
+
+<table class="table table-striped table-bordered table-hover">
+<thead>
+<tr>
+<th>Pilih Barang</th>
+<th>Nama Barang</th>
+
+</tr>
+</thead>
+<tbody>
+<?php 
+foreach ($data as $dataa):
+?>
+<tr>
+<td><center><input class="form-check-input" type="checkbox" value="<?=$dataa['Nama_Barang']?>" name="barang[]"></center></td>
+<td><label class="form-check-label"><?=$dataa['Nama_Barang']?></label></td>
+</tr>
+<?php 
+endforeach 
+?>
+</tbody>
+</table>     
+</div>
+        
+<div class="form-group">
+<label>Tanggal Terima</label>
+<input type="date" class="form-control" name="tanggal_terima">
+</div>
+<div class="form-group">
+<label>Penerima</label>
+<input type="text" class="form-control" name="penerima">
+</div>
+
+<button type="submit" class="btn btn-primary mr-3" name="submit">Submit</button>
+
+</center>
+</form>
+
+        </div>
+    </div>
+</div>
   
         </div>
       </section> 
   
- 
+  <section class="wt-section" id="services">
+        <div class="container">
+    <div class="row justify-content-md-center text-center pb-lg-4 mb-lg-5 mb-4">
+          <div class="col-md-8 text-center w-md-50 mx-auto mb-0">
+            <h2 class="mb-md-2">Penerimaan Barang</h2>
+          </div>
+    </div>
+
+                   <?php
+
+                $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
+                $data = json_decode($url, true);
+
+                ?>
+
+    <form action="" method="post" enctype="multipart/form-data">
+    <div>
+  <label><b>Barang Tersedia</b></label>
+  </div>
+  <div class="form-check form-check-inline">
+    
+    <table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+          <th>Pilih Barang</th>
+          <th>Nama Barang</th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php 
+    foreach ($data as $dataa):
+    ?>
+        <tr>
+          <td><center><input class="form-check-input" type="checkbox" value="<?=$dataa['Nama_Barang']?>" name="barang[]"></center></td>
+          <td><label class="form-check-label"><?=$dataa['Nama_Barang']?></label></td>
+        </tr>
+    <?php 
+    endforeach 
+    ?>
+    </tbody>
+       </table>     
+  </div>
+                        
+    <div class="form-group">
+      <label>Tanggal Terima</label>
+      <input type="date" class="form-control" name="tanggal_terima">
+    </div>
+    <div class="form-group">
+      <label>Penerima</label>
+      <input type="text" class="form-control" name="penerima">
+    </div>
+   
+    <button type="submit" class="btn btn-primary mr-3" name="submit">Submit</button>
+   
+      </center>
+  </form>
+
+
+   
+  </div>
+      </section>
+
+  
     <!-- Footer -->
     <footer class="bg-dark py-5">
       <div class="container">

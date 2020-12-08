@@ -1,22 +1,15 @@
 <?php
-require 'function2.php';
-if(isset($_POST["submit"])){
-if(create($_POST) > 0){
-    echo "
-    <div class='alert alert-success'>
-    <strong>Success!</strong> Data successfully has been created.
-    </div>
-    ";
-}else{
-    echo "
-    <div class='alert alert-danger'>
-    <strong>Success!</strong> Data failed to created.
-    </div>
-    ";
-}
-}
+require 'function.php';
+//get data semua dulu
+$barang = read("SELECT * FROM penerimaan");
+$id = $_GET["id"];
 
-?>
+
+//ambil data detail per id dan juga ambil di indexnya
+$barangDetail  = read("SELECT * FROM penerimaan where id = $id")[0];
+    ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -120,12 +113,7 @@ if(create($_POST) > 0){
               <br>
               <div class="panel-body">
                   <div class="table-responsive">
-                   <?php
-
-                $url = file_get_contents('https://loogistik.000webhostapp.com/logistik.json');
-                $data = json_decode($url, true);
-
-                ?>
+               
   <form action="" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="exampleInputLokasi">Lokasi Gudang</label>
@@ -133,7 +121,7 @@ if(create($_POST) > 0){
     </div>
     <div class="form-group">
       <label for="exampleInputNama">Nama Barang</label>
-      <input type="Nama" class="form-control" id="exampleInputNama">
+      <input type="Nama" class="form-control" id="exampleInputNama" value="<?= $barangDetail["nama_barang"]; ?>">
     </div>
     <div class="form-group">
       <label for="exampleInputJenis">Jenis Barang</label>
